@@ -2,7 +2,7 @@ import './App.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import styled from 'styled-components';
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import News from './components/News'
 import Footballer from './components/Footballer'
 
