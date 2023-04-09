@@ -2,10 +2,10 @@ import './App.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import styled from 'styled-components';
-import { Routes, Route } from 'react-router-dom'
-import News from './components/News'
-import Footballer from './components/Footballer'
-
+import { Routes, Route, Router } from 'react-router-dom'
+import News from './pages/News'
+import Footballer from './pages/Footballer'
+import Login from './components/Login';
 
 const App = () => {
   return (
@@ -13,11 +13,11 @@ const App = () => {
       <Container>
         <Header />
         <Routes>
-          <Route path="/" element={<Footballer />} />
-          <Route path="/News" element={<News />} />
+          <Route path="/Footballer" element={<Footballer />} />
+          <Route path="/News" element={<News />}/>
         </Routes>
       </Container>
-      <Footer />
+      <Footer/>
     </Wrapper>
   )
 }

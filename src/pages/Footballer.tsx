@@ -5,28 +5,36 @@ import Mystats from './Mystats';
 import { useState } from 'react';
 
 
+const footballer = {
+  name: 'Макар бондарев',
+  position: 'Нападающий',
+  age: '29.01.2005',
+  foot: 'Быстрая',
+  team: 'FC Спартак',
+}
 
-
-function Footballer() {
+const Footballer = () => {
 
   const [more, setMore] = useState(false);
   const moreStats = () => {
     setMore(!more)
   };
 
+
+
   return (
     <>
       <Information>
         <Resume>
           <Name>
-            Макар бондарев
+            {footballer.name}
           </Name>
           <Position>
             <Title>
               Позиция:
             </Title>
             <SubTitle>
-              Нападающий
+              {footballer.position}
             </SubTitle>
           </Position>
           <Age>
@@ -34,7 +42,7 @@ function Footballer() {
               Возраст:
             </Title>
             <SubTitle>
-              29.01.2005
+              {footballer.age}
             </SubTitle>
           </Age>
           <Foot>
@@ -42,7 +50,7 @@ function Footballer() {
               Нога:
             </Title>
             <SubTitle>
-              Быстрая
+              {footballer.foot}
             </SubTitle>
           </Foot>
           <Team>
@@ -50,7 +58,7 @@ function Footballer() {
               Команда:
             </Title>
             <SubTitle>
-              FC Спартак
+              {footballer.team}
             </SubTitle>
           </Team>
         </Resume>
@@ -58,11 +66,11 @@ function Footballer() {
           <FootbalPlayer src={makar} />
         </Avatar>
       </Information>
-      <Statistic>
-        <MyStats>
+      <Statistic defaultChecked={more} onClick={moreStats} >
+        <MyStats defaultChecked={more}>
           Моя статистика
         </MyStats>
-        <MoreIcon src={moreicon} onClick={moreStats} defaultChecked={more} />
+        <MoreIcon src={moreicon} defaultChecked={more} />
       </Statistic>
       {more && <Mystats />}
     </>
@@ -71,7 +79,6 @@ function Footballer() {
 }
 
 const MoreIcon = styled.img`
-  cursor: pointer;
   transform: ${props => props.defaultChecked ? "rotate(90deg)" : "rotate(0deg)"} ;
 `;
 
@@ -83,18 +90,25 @@ font-size: 30px;
 line-height: 30px;
 letter-spacing: 0.05em;
 text-transform: uppercase;
-color: #25BA00;
+color: ${props => props.defaultChecked ? "#25BA00" : "#2D2D2D"};
+  &:hover{
+    color: #25BA00 ;
+  } 
+
 `;
 
 const Statistic = styled.div`
 padding: 30px 0 ;
 border-top: solid 1px #25BA00 ;
-border-bottom: solid 1px #25BA00 ;
+border-bottom: ${props => props.defaultChecked ? "none" : "solid 1px #25BA00"} ;
 display: flex;
 align-items: center;
 gap: 20px;
-margin-bottom: 30px;
+margin-bottom: 30px;  
+cursor:pointer;
 `;
+
+
 
 const Information = styled.div`
 display: flex;

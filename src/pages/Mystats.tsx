@@ -1,6 +1,7 @@
 import react from 'react';
 import { Chart } from 'react-google-charts';
 import styled from 'styled-components';
+import { useState } from 'react';
 
 function getRandomInt() {
   return Math.round(Math.random() * (40 - 1)) + 1;
@@ -51,7 +52,7 @@ const data = [
 //   vAxis: IVAxis,
 // }
 
-const options/* : IOptions */ = {
+const options = {
   legend: 'none',
   colors: ['#38c914'],
   pointSize: 15,
@@ -59,66 +60,28 @@ const options/* : IOptions */ = {
   vAxis: { minValue: 0, maxValue: 40 },
 };
 
+const stat_map = ['Удары', 'Скорость', 'Реакция', 'Прыжок']
 
-function Mystats() {
+const Mystats = () => {
+
   return (
     <WrapStat>
-      <Parameter>
-        <StatTitle>
-          Удары
-        </StatTitle>
-        <Graph>
-          <Chart
-            chartType="AreaChart"
-            data={data}
-            options={options}
-            width='580px'
-            height='400px'
-          />
-        </Graph>
-      </Parameter>
-      <Parameter>
-        <StatTitle>
-          Скорость
-        </StatTitle>
-        <Graph>
-          <Chart
-            chartType="AreaChart"
-            data={data}
-            options={options}
-            width='580px'
-            height='400px'
-          />
-        </Graph>
-      </Parameter>
-      <Parameter>
-        <StatTitle>
-          Реакция
-        </StatTitle>
-        <Graph>
-          <Chart
-            chartType="AreaChart"
-            data={data}
-            options={options}
-            width='580px'
-            height='400px'
-          />
-        </Graph>
-      </Parameter>
-      <Parameter>
-        <StatTitle>
-          Прыжок
-        </StatTitle>
-        <Graph>
-          <Chart
-            chartType="AreaChart"
-            data={data}
-            options={options}
-            width='580px'
-            height='400px'
-          />
-        </Graph>
-      </Parameter>
+      {stat_map.map(e =>
+        <Parameter >
+          <StatTitle>
+            Удары
+          </StatTitle>
+          <Graph>
+            <Chart
+              chartType="AreaChart"
+              data={data}
+              options={options}
+              width='580px'
+              height='400px'
+            />
+          </Graph>
+        </Parameter>
+      )}
     </WrapStat>
   );
 };
@@ -127,9 +90,10 @@ const WrapStat = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-padding: 20px 0 ;
+padding: 20px 0;
 flex-wrap: wrap;
 gap: 48px;
+border-bottom: solid 1px #25BA00;
 `;
 
 const Parameter = styled.div`

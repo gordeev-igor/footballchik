@@ -17,10 +17,10 @@ interface IArticles  {
   apiUrl: string,
   isHosted: boolean,
   pillarId: string,
-  pillarName: string
+  pillarName: string,
 }
 
-function News() {
+const News = () => {
 
   const [articles, setArticles] = useState<Array<IArticles>>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -70,12 +70,12 @@ function News() {
                   <StrongerImage src={kachok} />
                 </Stronger>
               );
-            })}
+            })}     
           </NewsInner>
       }
     </>
   )
-}
+};
 
 const MainInfo = styled.div`
 display: flex;

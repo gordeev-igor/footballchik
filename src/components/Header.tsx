@@ -8,8 +8,13 @@ import { Link, NavLink } from 'react-router-dom'
 
 
 
+const abonement = {
+  lastPay: '29.03.2022',
+  time: 'месяц',
+  type: 'базовый',
+}
 
-function Header() {
+const Header = () => {
   return (
     <>
       <HeaderTopInner>
@@ -28,7 +33,7 @@ function Header() {
                 Крайняя оплата:
               </TitleTe>
               <SubText>
-                29.03.2022
+                {abonement.lastPay}
               </SubText>
             </LastPay>
             <PayMonth>
@@ -36,7 +41,7 @@ function Header() {
                 Оплачено на:
               </TitleTe>
               <SubText>
-                месяц
+                {abonement.time}
               </SubText>
             </PayMonth>
             <Abonem>
@@ -44,7 +49,7 @@ function Header() {
                 Абонемент:
               </TitleTe>
               <SubText>
-                базовый
+                {abonement.type}
               </SubText>
             </Abonem>
           </PayInfo>
@@ -66,7 +71,7 @@ function Header() {
         <MainLogo src={main} />
         <NavBar>
           <NavLi>
-            <NavLink to='/'>Главная</NavLink>
+            <NavLink to='/Footballer'>Главная</NavLink>
           </NavLi>
           <NavLi>
             <NavLink to='/News'>Новости</NavLink>
@@ -80,7 +85,7 @@ function Header() {
         </NavBar>
         <Authorization>
           <Login>
-            <Link to='#'>
+            <Link to='./Login.jsx'>
               Войти
             </Link>
           </Login>

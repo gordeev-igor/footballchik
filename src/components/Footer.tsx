@@ -4,7 +4,7 @@ import tgrev from '../img/tg-rev.svg'
 import vkbig from '../img/vkbig.svg'
 import { Link } from 'react-router-dom';
 
-function Footer() {
+const Footer = () => {
   return (
     <>
       <FooterInner>
@@ -87,6 +87,7 @@ height: fit-content;
 background-color: #2D2D2D;
 display: flex;
 justify-content: space-between;
+margin-top: 20px;
 `;
 
 
