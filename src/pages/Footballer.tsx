@@ -3,7 +3,7 @@ import makar from '../img/footballer1.jpg';
 import moreicon from '../img/more.svg'
 import Mystats from './Mystats';
 import { useState } from 'react';
-
+import Container from '../components/Container';
 
 const footballer = {
   name: 'Макар бондарев',
@@ -23,7 +23,7 @@ const Footballer = () => {
 
 
   return (
-    <>
+    <Container>
       <Information>
         <Resume>
           <Name>
@@ -73,7 +73,7 @@ const Footballer = () => {
         <MoreIcon src={moreicon} defaultChecked={more} />
       </Statistic>
       {more && <Mystats />}
-    </>
+    </Container>
 
   )
 }

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios';
 import ScaleLoader from "react-spinners/ScaleLoader";
 import kachok from '../img/kachok.jpg'
+import Container from '../components/Container';
 
 const src = "https://content.guardianapis.com/search?page=2&q=debate&api-key=test"
 
@@ -35,7 +36,7 @@ const News = () => {
       })
   }, [])
   return (
-    <>
+    <Container>
       {
         loading ?
           <LoadStyle>
@@ -73,7 +74,7 @@ const News = () => {
             })}     
           </NewsInner>
       }
-    </>
+    </Container >
   )
 };
 

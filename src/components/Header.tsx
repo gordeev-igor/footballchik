@@ -5,7 +5,7 @@ import phone from '../img/phone.svg'
 import mail from '../img/mail.svg'
 import main from '../img/main.svg'
 import { Link, NavLink } from 'react-router-dom'
-
+import Container from './Container';
 
 
 const abonement = {
@@ -16,7 +16,7 @@ const abonement = {
 
 const Header = () => {
   return (
-    <>
+    <Container>
       <HeaderTopInner>
         <HeaderInfo>
           <Social>
@@ -71,10 +71,10 @@ const Header = () => {
         <MainLogo src={main} />
         <NavBar>
           <NavLi>
-            <NavLink to='/Footballer'>Главная</NavLink>
+            <NavLink to='/footballer'>Главная</NavLink>
           </NavLi>
           <NavLi>
-            <NavLink to='/News'>Новости</NavLink>
+            <NavLink to='/news'>Новости</NavLink>
           </NavLi>
           <NavLi>
             <Link to='#'>Расписание</Link>
@@ -85,7 +85,7 @@ const Header = () => {
         </NavBar>
         <Authorization>
           <Login>
-            <Link to='./Login.jsx'>
+            <Link to='/login'>
               Войти
             </Link>
           </Login>
@@ -96,7 +96,7 @@ const Header = () => {
           </Registration>
         </Authorization>
       </HeaderBotInner>
-    </>
+    </Container>
   )
 }
 

@@ -1,7 +1,7 @@
 import react from 'react';
 import { Chart } from 'react-google-charts';
 import styled from 'styled-components';
-import { useState } from 'react';
+import Container from '../components/Container';
 
 function getRandomInt() {
   return Math.round(Math.random() * (40 - 1)) + 1;
@@ -61,62 +61,63 @@ const options = {
 };
 
 const stat_map = ['Удары', 'Скорость', 'Реакция', 'Прыжок']
-
 const Mystats = () => {
 
   return (
-    <WrapStat>
-      {stat_map.map(e =>
-        <Parameter >
-          <StatTitle>
-            Удары
-          </StatTitle>
-          <Graph>
-            <Chart
-              chartType="AreaChart"
-              data={data}
-              options={options}
-              width='580px'
-              height='400px'
-            />
-          </Graph>
-        </Parameter>
-      )}
-    </WrapStat>
+    <Container>
+      <WrapStat>
+        {stat_map.map(e =>
+          <Parameter >
+            <StatTitle>
+              Удары
+            </StatTitle>
+            <Graph>
+              <Chart
+                chartType="AreaChart"
+                data={data}
+                options={options}
+                width='570px'
+                height='400px'
+              />
+            </Graph>
+          </Parameter>
+        )}
+      </WrapStat>
+    </Container>
   );
 };
 
 const WrapStat = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-padding: 20px 0;
-flex-wrap: wrap;
-gap: 48px;
-border-bottom: solid 1px #25BA00;
-`;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+        flex-wrap: wrap;
+        gap: 48px;
+        border-bottom: solid 1px #25BA00;
+        `;
 
 const Parameter = styled.div`
 
-`;
+        `;
 const Graph = styled.div`
-font-family: 'Gotham Pro';
-`;
+        font-family: 'Gotham Pro';
+        `;
 
 const StatTitle = styled.div`
-font-family: 'Gotham Pro Regular', sans-serif;
-font-style: normal;
-font-weight: 700;
-font-size: 20px;
-line-height: 19px;
-letter-spacing: 0.05em;
-text-transform: uppercase;
-color: #2D2D2D;
-padding-bottom:5px;
-border-bottom: 1px solid #25BA00;
-width: fit-content;
-margin-left: 85px;
+        font-family: 'Gotham Pro Regular', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 19px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #2D2D2D;
+        padding-bottom:5px;
+        border-bottom: 1px solid #25BA00;
+        width: fit-content;
+        margin-left: 85px;
 
-`;
+        `;
 
 export default Mystats
