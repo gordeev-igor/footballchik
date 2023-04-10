@@ -1,7 +1,7 @@
 import react from 'react';
 import { Chart } from 'react-google-charts';
 import styled from 'styled-components';
-import Container from '../components/Container';
+import Container from './Container';
 
 function getRandomInt() {
   return Math.round(Math.random() * (40 - 1)) + 1;
@@ -64,7 +64,7 @@ const stat_map = ['Удары', 'Скорость', 'Реакция', 'Прыж�
 const Mystats = () => {
 
   return (
-    <Container>
+    <ContainerStat>
       <WrapStat>
         {stat_map.map(e =>
           <Parameter >
@@ -83,9 +83,23 @@ const Mystats = () => {
           </Parameter>
         )}
       </WrapStat>
-    </Container>
+    </ContainerStat>
   );
 };
+
+
+const ContainerStat = styled.div`
+  border-bottom: solid 1px #25BA00;
+  max-width: 1220px;
+  margin: 0 auto;
+  width: calc(100% - 32px);
+  padding: 0 17px ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: -1px;
+`;
+
 
 const WrapStat = styled.div`
         display: flex;
@@ -95,6 +109,7 @@ const WrapStat = styled.div`
         flex-wrap: wrap;
         gap: 48px;
         border-bottom: solid 1px #25BA00;
+        margin-bottom: -1px;
         `;
 
 const Parameter = styled.div`

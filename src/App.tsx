@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Routes, Route } from 'react-router-dom'
 import News from './pages/News'
 import Footballer from './pages/Footballer'
-import Login from './components/Login';
+import Login from './pages/Login';
 import Layout from './components/Layout';
 
 const App = () => {
