@@ -1,13 +1,12 @@
 import react from 'react';
 import styled from 'styled-components';
-import Container from './Container';
 
 
 const Mystats = () => {
 
   return (
     <ContainerResult>
-
+      ТУТ БУДУТ ТАБЛИЦЫ
     </ContainerResult>
   );
 };
