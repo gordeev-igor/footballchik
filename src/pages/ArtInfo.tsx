@@ -12,7 +12,6 @@ export const information = {
 const ArtInfo = () => {
 
   return (
-
     <ArtInner>
       <AtrTitile>
         {information.nameArt}
@@ -107,6 +106,7 @@ const ArtInner = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding:95px 0 75px;
 `;
 
 export default ArtInfo
