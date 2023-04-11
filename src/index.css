@@ -280,4 +280,6 @@ select {
   padding-bottom: 4px;
 }
 
-;
+.link__information{
+  color: white;
+}

@@ -93,7 +93,6 @@ const Footballer = () => {
 
 const Result = styled.div`
 padding: 30px 0 ;
-border-top: solid 1px #25BA00 ;
 border-bottom: ${props => props.defaultChecked ? "none" : "solid 1px #25BA00"} ;
 display: flex;
 align-items: center;

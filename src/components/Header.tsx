@@ -82,6 +82,9 @@ const Header = () => {
           <NavLi>
             <Link to='#'>Достижения</Link>
           </NavLi>
+          <NavLi>
+            <Link to='/information'>Информация</Link>
+          </NavLi>
         </NavBar>
         <Authorization>
           <Login>

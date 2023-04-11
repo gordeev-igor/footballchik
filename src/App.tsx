@@ -7,6 +7,8 @@ import News from './pages/News'
 import Footballer from './pages/Footballer'
 import Login from './pages/Login';
 import Layout from './components/Layout';
+import Information from './pages/Information';
+import ArtInfo from './pages/ArtInfo';
 
 const App = () => {
   return (
@@ -15,6 +17,8 @@ const App = () => {
         <Route path='/' element={<Layout />}>
           <Route index path="/footballer" element={<Footballer />}/>
           <Route path="/news" element={<News />} />
+          <Route path="/information" element={<Information />} />
+          <Route path="/art" element={<ArtInfo />} />
         </Route>
         <Route>
           <Route path="/login" element={<Login/>} />
