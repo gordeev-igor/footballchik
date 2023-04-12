@@ -89,7 +89,6 @@ const Mystats = () => {
 
 
 const ContainerStat = styled.div`
-  border-bottom: solid 1px #25BA00;
   max-width: 1220px;
   margin: 0 auto;
   width: calc(100% - 32px);
@@ -97,6 +96,7 @@ const ContainerStat = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-bottom: solid 1px #25BA00;
 `;
 
 
@@ -107,8 +107,7 @@ const WrapStat = styled.div`
         padding: 20px 0;
         flex-wrap: wrap;
         gap: 48px;
-        border-bottom: solid 1px #25BA00;
-        margin-bottom: -1px;
+
         `;
 
 const Parameter = styled.div`

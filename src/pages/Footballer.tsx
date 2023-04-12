@@ -6,7 +6,8 @@ import Average from '../components/Average';
 import { useState } from 'react';
 import Container from '../components/Container';
 
-const footballer = {
+
+ const footballer = {
   name: 'Макар бондарев',
   position: 'Нападающий',
   age: '29.01.2005',

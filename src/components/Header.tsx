@@ -83,7 +83,7 @@ const Header = () => {
             <Link to='#'>Достижения</Link>
           </NavLi>
           <NavLi>
-            <Link to='/information'>Информация</Link>
+            <NavLink to='/information'>Информация</NavLink>
           </NavLi>
         </NavBar>
         <Authorization>
@@ -133,6 +133,7 @@ font-size: 14px;
 line-height: 13px;
 letter-spacing: 0.03em;
 color: #2D2D2D;
+
 `;
 
 const Registration = styled.div`

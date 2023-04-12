@@ -172,8 +172,6 @@ display: flex;
 padding: 20px 0 ;
 flex-wrap: wrap;
 gap: 48px;
-justify-content: center;
-align-items: center;
 `;
 
 

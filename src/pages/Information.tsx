@@ -12,36 +12,50 @@ import { information } from './ArtInfo';
 //   date: '15 окт. 2021',
 // }
 
+
 const Information = () => {
 
   return (
-    <Container>
-      <NewsInner>
-        <Stronger>
-          <StrongerNews>
-            <MainInfo>
-              <NewsInfo >
-                <Link className='link__information' to='/art'>
-                  {information.moreInfo}
-                </Link>
-              </NewsInfo>
-              <NewsTitle>
-                {information.nameArt}
-              </NewsTitle>
-              <NewsSub>
-                {information.shortInfo}
-              </NewsSub>
-            </MainInfo>
-            <NewsDate>
-              {information.date}
-            </NewsDate>
-          </StrongerNews>
-          <StrongerImage src={kachok} />
-        </Stronger>
-      </NewsInner>
-    </Container>
+    <ContainerInfo>
+        <NewsInner>
+          <Stronger>
+            <StrongerNews>
+              <MainInfo>
+                <NewsInfo >
+                  <Link className='link__information' to='/art'>
+                    {information.moreInfo}
+                  </Link>
+                </NewsInfo>
+                <NewsTitle>
+                  {information.nameArt}
+                </NewsTitle>
+                <NewsSub>
+                  {information.shortInfo}
+                </NewsSub>
+              </MainInfo>
+              <NewsDate>
+                {information.date}
+              </NewsDate>
+            </StrongerNews>
+            <StrongerImage src={kachok} />
+          </Stronger>
+        </NewsInner>
+    </ContainerInfo>
   );
 };
+
+const ContainerInfo = styled.div`
+  max-width: 1220px;
+  margin: 0 auto;
+  width: calc(100% - 32px);
+  padding: 0 17px ;
+  display: flex;
+
+  justify-content: space-between;
+
+`;
+
+
 
 const MainInfo = styled.div`
 display: flex;
@@ -63,7 +77,7 @@ const NewsInfo = styled.a`
 padding: 12px;
 border: 1px solid #25BA00;
 text-align: center;
-font-family: 'Gotham Pro';
+font-family: 'Gotham Pro Regular', sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 14px;
@@ -123,12 +137,8 @@ const Stronger = styled.div`
 display: flex;
 max-width:48%;
 justify-content: space-between;
-`;
-
-const LoadStyle = styled.div`
-  display: flex;
-  justify-content: center;
-  align-self: center;
+min-width:570px;
+min-height:400px;
 `;
 
 const NewsInner = styled.div`
@@ -136,8 +146,7 @@ display: flex;
 padding: 20px 0 ;
 flex-wrap: wrap;
 gap: 48px;
-justify-content: center;
-align-items: center;
+
 `;
 
 export default Information
