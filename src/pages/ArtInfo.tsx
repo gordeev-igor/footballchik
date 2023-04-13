@@ -6,7 +6,7 @@ export const information = {
   moreInfo: 'Информация',
   nameArt: 'Тренировки на улице',
   shortInfo: 'Данный способ поможет вам развить силу',
-  date: '15 окт. 2021',
+  dateInfo: '15 окт. 2021',
 }
 
 const ArtInfo = () => {
@@ -17,7 +17,7 @@ const ArtInfo = () => {
         {information.nameArt}
       </AtrTitile>
       <ArtDate>
-        {information.date}
+        {information.dateInfo}
       </ArtDate>
       <ArtImg src={artimg} />
       <Content>

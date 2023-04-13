@@ -17,29 +17,29 @@ const Information = () => {
 
   return (
     <ContainerInfo>
-        <NewsInner>
-          <Stronger>
-            <StrongerNews>
-              <MainInfo>
-                <NewsInfo >
-                  <Link className='link__information' to='/art'>
-                    {information.moreInfo}
-                  </Link>
-                </NewsInfo>
-                <NewsTitle>
-                  {information.nameArt}
-                </NewsTitle>
-                <NewsSub>
-                  {information.shortInfo}
-                </NewsSub>
-              </MainInfo>
-              <NewsDate>
-                {information.date}
-              </NewsDate>
-            </StrongerNews>
-            <StrongerImage src={kachok} />
-          </Stronger>
-        </NewsInner>
+      <NewsInner>
+        <Stronger>
+          <StrongerNews>
+            <MainInfo>
+              <NewsInfo >
+                <Link className='link__information' to='/art'>
+                  {information.moreInfo}
+                </Link>
+              </NewsInfo>
+              <NewsTitle>
+                {information.nameArt}
+              </NewsTitle>
+              <NewsSub>
+                {information.shortInfo}
+              </NewsSub>
+            </MainInfo>
+            <NewsDate>
+              {information.dateInfo}
+            </NewsDate>
+          </StrongerNews>
+          <StrongerImage src={kachok} />
+        </Stronger>
+      </NewsInner>
     </ContainerInfo>
   );
 };

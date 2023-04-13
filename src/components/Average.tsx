@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import iconDate from '../img/iconDate.svg'
 import { useState } from 'react';
+import TablesInfo from './TablesInfo';
 
-const dateFootballer = {
+ 
+export const dateFootballer = {
   date1: '1991',
   date2: '1992',
   date3: '1993',
@@ -34,6 +36,7 @@ const Mystats = () => {
             <DateValue onClick={chooseYear}>{dateFootballer.date2} года рождения</DateValue>
             <DateValue onClick={chooseYear}>{dateFootballer.date3} года рождения</DateValue>
           </DateList>}
+          <TablesInfo/>
         </ChooseDate>
       </ResulInner >
     </ContainerResult >

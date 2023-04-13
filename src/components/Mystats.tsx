@@ -1,7 +1,7 @@
 import react from 'react';
 import { Chart } from 'react-google-charts';
 import styled from 'styled-components';
-import Container from './Container';
+
 
 function getRandomInt() {
   return Math.round(Math.random() * (40 - 1)) + 1;
@@ -69,7 +69,7 @@ const Mystats = () => {
         {stat_map.map(e =>
           <Parameter >
             <StatTitle>
-              Удары
+              {e}
             </StatTitle>
             <Graph>
               <Chart
