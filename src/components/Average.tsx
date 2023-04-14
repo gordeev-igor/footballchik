@@ -3,12 +3,12 @@ import iconDate from '../img/iconDate.svg'
 import { useState } from 'react';
 import TablesInfo from './TablesInfo';
 
- 
-export const dateFootballer = {
-  date1: '1991',
-  date2: '1992',
-  date3: '1993',
-}
+
+export const dateFootballer = [
+  {date: '1991'},
+  {date: '1992'},
+  {date: '1993'},
+]
 
 
 const Mystats = () => {
@@ -32,11 +32,14 @@ const Mystats = () => {
             <DateIcon src={iconDate} />
           </ResultInput>
           {dateList && <DateList>
-            <DateValue onClick={chooseYear}>{dateFootballer.date1} года рождения</DateValue>
-            <DateValue onClick={chooseYear}>{dateFootballer.date2} года рождения</DateValue>
-            <DateValue onClick={chooseYear}>{dateFootballer.date3} года рождения</DateValue>
+            {dateFootballer
+              .map((item, index) => {
+                return (
+                  <DateValue key={index} onClick={chooseYear}>{item.date} года рождения</DateValue>
+                )
+              })}
           </DateList>}
-          <TablesInfo/>
+          <TablesInfo />
         </ChooseDate>
       </ResulInner >
     </ContainerResult >
