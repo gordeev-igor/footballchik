@@ -7,52 +7,61 @@ import target from "../img/target.svg"
 
 
 
-const average_map = [1,2 ,3,4]
-
 const TablesInfo = () => {
 
 
 
   return (
     <>
-      <TableWrapper>
-        <TableContainer >
-          <IndicatorList>
-            <ResultText>
-              <AverageResult>Средний р-т</AverageResult>
-              <BestResult>Лучший р-т</BestResult>
-            </ResultText>
-            <IndicatorItem>
-              <IndicatorIcon src={udar} />
-              <IndicatorText>Удар</IndicatorText>
-              <IndicatorAverage>31</IndicatorAverage>
-              <IndicatorBest>123</IndicatorBest>
-            </IndicatorItem>
-            <IndicatorItem>
-              <IndicatorIcon src={jump} />
-              <IndicatorText>Прыжок</IndicatorText>
-              <IndicatorAverage>31</IndicatorAverage>
-              <IndicatorBest>12</IndicatorBest>
-            </IndicatorItem>
-            <IndicatorItem>
-              <IndicatorIcon src={reaction} />
-              <IndicatorText>Реакция</IndicatorText>
-              <IndicatorAverage>321</IndicatorAverage>
-              <IndicatorBest>1213</IndicatorBest>
-            </IndicatorItem>
-            <IndicatorItem>
-              <IndicatorIcon src={speed} />
-              <IndicatorText>Скорость</IndicatorText>
-              <IndicatorAverage>312</IndicatorAverage>
-              <IndicatorBest>212</IndicatorBest>
-            </IndicatorItem>
-          </IndicatorList>
-        </TableContainer>
-      </TableWrapper>
+      <TableBorder></TableBorder>
+      <TableContainer >
+        <IndicatorList>
+          <ResultText>
+            <AverageResult>Средний р-т</AverageResult>
+            <BestResult>Лучший р-т</BestResult>
+          </ResultText>
+          <IndicatorItem>
+            <IndicatorIcon src={udar} />
+            <IndicatorText>Удар</IndicatorText>
+            <IndicatorAverage>31</IndicatorAverage>
+            <IndicatorBest>123</IndicatorBest>
+          </IndicatorItem>
+          <IndicatorItem>
+            <IndicatorIcon src={jump} />
+            <IndicatorText>Прыжок</IndicatorText>
+            <IndicatorAverage>31</IndicatorAverage>
+            <IndicatorBest>12</IndicatorBest>
+          </IndicatorItem>
+          <IndicatorItem>
+            <IndicatorIcon src={reaction} />
+            <IndicatorText>Реакция</IndicatorText>
+            <IndicatorAverage>321</IndicatorAverage>
+            <IndicatorBest>1213</IndicatorBest>
+          </IndicatorItem>
+          <IndicatorItem>
+            <IndicatorIcon src={speed} />
+            <IndicatorText>Скорость</IndicatorText>
+            <IndicatorAverage>312</IndicatorAverage>
+            <IndicatorBest>12223</IndicatorBest>
+          </IndicatorItem>
+          <IndicatorItem>
+            <IndicatorIcon src={target} />
+            <IndicatorText>Точность удара</IndicatorText>
+            <IndicatorAverage>3431</IndicatorAverage>
+            <IndicatorBest>1123</IndicatorBest>
+          </IndicatorItem>
+        </IndicatorList>
+      </TableContainer>
     </>
   )
 }
 
+
+const TableBorder = styled.div`
+border-bottom:solid 1px #25BA00;
+padding: 20px;
+width: 640px;
+`;
 
 const IndicatorAverage = styled.div`
 padding: 20px 0;
@@ -128,12 +137,10 @@ justify-content: space-between;
 const TableContainer = styled.div`
 width: fit-content;
 height: fit-content;
-margin-top: 20px;
+margin-top: 40px;
 `;
 
-const TableWrapper = styled.div`
 
-`;
 
 
 export default TablesInfo
