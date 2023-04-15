@@ -80,7 +80,7 @@ const Header = () => {
             <NavLink to='/timesheet'>Расписание</NavLink>
           </NavLi>
           <NavLi>
-            <Link to='#'>Достижения</Link>
+            <NavLink to='/achievements'>Достижения</NavLink>
           </NavLi>
           <NavLi>
             <NavLink to='/information'>Информация</NavLink>
