@@ -5,9 +5,9 @@ import TablesInfo from './TablesInfo';
 
 
 export const dateFootballer = [
-  {date: '1991'},
-  {date: '1992'},
-  {date: '1993'},
+  { date: '1991' },
+  { date: '1992' },
+  { date: '1993' },
 ]
 
 
@@ -15,6 +15,10 @@ const Mystats = () => {
   const [dateList, setDateList] = useState(false);
   const chooseYear = () => {
     setDateList(!dateList)
+    function asas () {
+    }
+    asas()
+    return
   };
 
 
@@ -35,7 +39,11 @@ const Mystats = () => {
             {dateFootballer
               .map((item, index) => {
                 return (
-                  <DateValue key={index} onClick={chooseYear}>{item.date} года рождения</DateValue>
+                  <DateValue
+                    key={index}
+                    onClick={chooseYear}>
+                    {item.date} года рождения
+                  </DateValue>
                 )
               })}
           </DateList>}

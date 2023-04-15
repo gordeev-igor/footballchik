@@ -77,7 +77,7 @@ const Header = () => {
             <NavLink to='/news'>Новости</NavLink>
           </NavLi>
           <NavLi>
-            <Link to='#'>Расписание</Link>
+            <NavLink to='/timesheet'>Расписание</NavLink>
           </NavLi>
           <NavLi>
             <Link to='#'>Достижения</Link>

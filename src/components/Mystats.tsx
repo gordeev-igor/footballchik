@@ -1,4 +1,3 @@
-import react from 'react';
 import { Chart } from 'react-google-charts';
 import styled from 'styled-components';
 
@@ -10,7 +9,7 @@ function getRandomDate() {
   return Math.round(Math.random() * (30 - 1)) + 1;
 };
 
-const pow: number[] = [];
+export const pow: number[] = [];
 const date: number[] = [];
 for (let i = 0; i < 4; i++) {
   const power = getRandomInt();
@@ -31,7 +30,7 @@ date.sort((a, b) => a - b);
 // }
 
 
-const data = [
+export const data = [
   ['Дата', 'Показатель'],
   [date[0] + ' ноября, 2022 ', pow[0]],
   [date[1] + ' ноября, 2022 ', pow[1]],

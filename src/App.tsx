@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Layout from './components/Layout';
 import Information from './pages/Information';
 import ArtInfo from './pages/ArtInfo';
+import Timesheet from './pages/Timesheet';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/news" element={<News />} />
           <Route path="/information" element={<Information />} />
           <Route path="/art" element={<ArtInfo />} />
+          <Route path="/timesheet" element={<Timesheet />} />
         </Route>
         <Route>
           <Route path="/login" element={<Login/>} />

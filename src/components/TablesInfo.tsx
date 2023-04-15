@@ -4,7 +4,7 @@ import speed from "../img/speed.svg"
 import reaction from "../img/reaction.svg"
 import jump from "../img/jump.svg"
 import target from "../img/target.svg"
-
+import { pow } from "./Mystats";
 
 
 const TablesInfo = () => {
@@ -23,32 +23,32 @@ const TablesInfo = () => {
           <IndicatorItem>
             <IndicatorIcon src={udar} />
             <IndicatorText>Удар</IndicatorText>
-            <IndicatorAverage>31</IndicatorAverage>
-            <IndicatorBest>123</IndicatorBest>
+            <IndicatorAverage>{pow[0]}</IndicatorAverage>
+            <IndicatorBest>{pow[1]}</IndicatorBest>
           </IndicatorItem>
           <IndicatorItem>
             <IndicatorIcon src={jump} />
             <IndicatorText>Прыжок</IndicatorText>
-            <IndicatorAverage>31</IndicatorAverage>
-            <IndicatorBest>12</IndicatorBest>
+            <IndicatorAverage>{pow[1]}</IndicatorAverage>
+            <IndicatorBest>{pow[2]}</IndicatorBest>
           </IndicatorItem>
           <IndicatorItem>
             <IndicatorIcon src={reaction} />
             <IndicatorText>Реакция</IndicatorText>
-            <IndicatorAverage>321</IndicatorAverage>
-            <IndicatorBest>1213</IndicatorBest>
+            <IndicatorAverage>{pow[2]}</IndicatorAverage>
+            <IndicatorBest>{pow[3]}</IndicatorBest>
           </IndicatorItem>
           <IndicatorItem>
             <IndicatorIcon src={speed} />
             <IndicatorText>Скорость</IndicatorText>
-            <IndicatorAverage>312</IndicatorAverage>
-            <IndicatorBest>12223</IndicatorBest>
+            <IndicatorAverage>{pow[3]}</IndicatorAverage>
+            <IndicatorBest>{pow[0]}</IndicatorBest>
           </IndicatorItem>
           <IndicatorItem>
             <IndicatorIcon src={target} />
             <IndicatorText>Точность удара</IndicatorText>
-            <IndicatorAverage>3431</IndicatorAverage>
-            <IndicatorBest>1123</IndicatorBest>
+            <IndicatorAverage>{pow[3]}</IndicatorAverage>
+            <IndicatorBest>{pow[0]}</IndicatorBest>
           </IndicatorItem>
         </IndicatorList>
       </TableContainer>
