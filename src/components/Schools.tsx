@@ -2,13 +2,18 @@ import Container from "./Container";
 import styled from "styled-components";
 import schoolsImg from '../img/scools-img.jpg'
 import mark from '../img/green-mark.svg'
-
-
+import { scheduleTime } from "./Schedule";
 const schools = [
   'Сормановская',
   'восточно-кругликовская',
   'академи трублиина 49',
   'зиповская 34 к 2',
+]
+
+const days = [
+  'Вторник',
+  'Четверг',
+  'Суббота',
 ]
 
 const Schools = () => {
@@ -21,20 +26,15 @@ const Schools = () => {
             <SchoolInfo>
               <InfoTitle> {e} </InfoTitle>
               <InfoSubtitle>12/6</InfoSubtitle>
-              <InfoDays>
-                <InfoDay>Четверг</InfoDay>
-                <InfoTime>
-                  <TimeMark src={mark} />
-                  <Time>18:00</Time>
-                </InfoTime>
-              </InfoDays>
-              <InfoDays>
-                <InfoDay>Суббота</InfoDay>
-                <InfoTime>
-                  <TimeMark src={mark} />
-                  <Time>18:00</Time>
-                </InfoTime>
-              </InfoDays>
+              {days.map(e =>
+                <InfoDays>
+                  <InfoDay>{e}</InfoDay>
+                    <InfoTime>
+                      <TimeMark src={mark} />
+                      <Time>18:00</Time>
+                    </InfoTime>
+                </InfoDays>
+              )}
             </SchoolInfo>
           </SchoolsItem>
         )}

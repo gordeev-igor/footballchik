@@ -17,9 +17,10 @@ const scheduleDay = [
   'Вечер'
 ]
 
-const scheduleTime = [
-  '18:00',
+export const scheduleTime = [
   '10:00',
+  '18:00',
+  '20:00',
 ]
 
 

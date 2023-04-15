@@ -8,7 +8,6 @@ const Timesheet = () => {
     <>
       <Schedule/>
       <Schools/>
-      <SheduleTable/>
     </>
   )
 }
