@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import arrow from '../img/arrow.svg'
 import { useState } from 'react';
 import Events from '../components/Events';
-import '../index.css'
-
+import Scores from '../components/Scores';
 
 const Achievements = () => {
 
@@ -21,47 +20,86 @@ const Achievements = () => {
 
   return (
     <Container>
-      <ContainerAchievements>
-        <AchievStats>
-          <StatsTitle>
+      <AchievStats>
+        <StatsTitle1>
+          <StatsTitleUpper>
             <StatsTitleInfo>
               Количество посещённых тренировок:
             </StatsTitleInfo>
             <StatsTitleCount>
               12
             </StatsTitleCount>
-          </StatsTitle>
-          <StatsTitle>
-            <StatsTitleInfo>
-              Посещение лагеря:
-            </StatsTitleInfo>
-            <StatsTitleCount>
-              3
-            </StatsTitleCount>
-          </StatsTitle>
-          <StatsTitle onClick={showEvents} defaultChecked={events}>
-            <StatsTitleInfo className='stats__title-show'>
-              Мероприятия
-            </StatsTitleInfo>
-            <StatsTitleArrow src={arrow} />
-          </StatsTitle>
-          <StatsTitle onClick={showScores} defaultChecked={scores}>
-            <StatsTitleInfo className='stats__title-show'>
-              Заработано баллов
-            </StatsTitleInfo>
-            <StatsTitleArrow src={arrow} />
-          </StatsTitle>
-        </AchievStats>
-        <AboutAchievs>
-          <Link to="/aboutAchievements"> Подробнее про “Достижения”</Link>
-        </AboutAchievs>
-      </ContainerAchievements>
+          </StatsTitleUpper>
+          <AboutAchievs>
+            <Link to="/aboutAchievements"> Подробнее про “Достижения”</Link>
+          </AboutAchievs>
+        </StatsTitle1>
+        <StatsTitle>
+          <StatsTitleInfo>
+            Посещение лагеря:
+          </StatsTitleInfo>
+          <StatsTitleCount>
+            3
+          </StatsTitleCount>
+        </StatsTitle>
+        <StatsTitleMore onClick={showEvents} defaultChecked={events}>
+          <StatsTitleInfoLink defaultChecked={events}>
+            Мероприятия
+          </StatsTitleInfoLink>
+          <StatsTitleArrow src={arrow} defaultChecked={events} />
+        </StatsTitleMore>
+        {events && <Events />}
+        <StatsTitleMore onClick={showScores} defaultChecked={scores}>
+          <StatsTitleInfoLink defaultChecked={scores}>
+            Заработано баллов
+          </StatsTitleInfoLink>
+          <StatsTitleArrow src={arrow} defaultChecked={scores} />
+        </StatsTitleMore>
+        {scores && <Scores />}
+      </AchievStats>
     </Container>
   )
 }
 
-const StatsTitleArrow = styled.img`
 
+const StatsTitleUpper = styled.div`
+display: flex;
+gap: 10px;
+`;
+
+const StatsTitle1 = styled.div`
+display: flex;
+justify-content: space-between;
+width:100%;
+`;
+
+
+const StatsTitleInfoLink = styled.div`
+font-family: 'Gotham Pro Regular', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+letter-spacing: 0.03em;
+color: #2D2D2D;
+color: ${props => props.defaultChecked ? "#25BA00" : "#2D2D2D"};
+  &:hover{
+    color: #25BA00 ;
+  } 
+`;
+
+const StatsTitleMore = styled.div`
+display: flex;
+gap: 10px;
+cursor:pointer;
+width:fit-content;
+  &:hover{
+    color: #25BA00 ;
+  } 
+`;
+
+const StatsTitleArrow = styled.img`
+  transform: ${props => props.defaultChecked ? "rotate(90deg)" : "rotate(0deg)"} ;  
 `;
 
 const StatsTitleInfo = styled.div`
@@ -109,11 +147,5 @@ flex-direction:column;
 gap:30px;
 `;
 
-const ContainerAchievements = styled.div`
-display: flex;
-justify-content: space-between;
-
-
-`;
 
 export default Achievements

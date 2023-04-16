@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import Container from './Container';
 
-const Events = () => {
+
+const Scores = () => {
   return (
     <>
-    
+
     </>
   )
 }
@@ -15,4 +15,4 @@ const SSS = styled.div`
 `;
 
 
-export default Events
+export default Scores

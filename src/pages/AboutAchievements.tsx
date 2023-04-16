@@ -123,11 +123,11 @@ const AboutAchievements = () => {
 const AboutBack = styled.div`
 font-family: 'Gotham Pro Regular', sans-serif;
 font-style: normal;
-font-weight: 300;
+font-weight: 400;
 font-size: 16px;
 line-height: 30px;
 letter-spacing: 0.03em;
-color: #2D2D2D;
+color: #25BA00;
 `;
 
 const Trainer = styled.div`
@@ -148,7 +148,7 @@ const GiftText = styled.div`
 font-family: 'Gotham Pro Regular', sans-serif;
 font-style: normal;
 font-weight: 400;
-font-size: 18px;
+font-size: px;
 line-height: 24px;
 color: #2D2D2D;
 `;
