@@ -91,6 +91,7 @@ color: ${props => props.defaultChecked ? "#25BA00" : "#2D2D2D"};
 const StatsTitleMore = styled.div`
 display: flex;
 gap: 10px;
+align-items: center;
 cursor:pointer;
 width:fit-content;
   &:hover{
@@ -145,6 +146,7 @@ const AchievStats = styled.div`
 display: flex;
 flex-direction:column;
 gap:30px;
+padding:40px 0px;
 `;
 
 
