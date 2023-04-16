@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 
 export const information = {
-  moreInfo: 'Информация',
   nameArt: 'Тренировки на улице',
   shortInfo: 'Данный способ поможет вам развить силу',
   dateInfo: '15 окт. 2021',
@@ -44,7 +43,7 @@ const ArtInfo = () => {
 };
 
 const ContentText = styled.div`
-font-family: 'Gotham Pro';
+font-family: 'Gotham Pro Regular', sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 18px;
@@ -57,7 +56,7 @@ width:800px;
 `;
 
 const ContentTitle = styled.div`
-font-family: 'Gotham Pro';
+font-family: 'Gotham Pro Regular', sans-serif;
 font-style: normal;
 font-weight: 700;
 font-size: 30px;

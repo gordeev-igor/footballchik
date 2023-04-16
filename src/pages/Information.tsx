@@ -5,120 +5,51 @@ import Container from '../components/Container';
 import kachok from '../img/kachok.jpg'
 import { Link } from 'react-router-dom';
 import { information } from './ArtInfo';
-// export const information = {
-//   moreInfo: 'Информация',
-//   titleInfo: 'Тренировки на улице',
-//   subTileInfo: 'Данный способ поможет вам развить силу',
-//   date: '15 окт. 2021',
-// }
 
+
+const information_map = [1, 2, 3, 4]
 
 const Information = () => {
 
   return (
-    <ContainerInfo>
-      <NewsInner>
-        <Stronger>
-          <StrongerNews>
-            <MainInfo>
-              <NewsInfo >
-                <Link className='link__information' to='/art'>
-                  {information.moreInfo}
-                </Link>
-              </NewsInfo>
-              <NewsTitle>
-                {information.nameArt}
-              </NewsTitle>
-              <NewsSub>
-                {information.shortInfo}
-              </NewsSub>
-            </MainInfo>
-            <NewsDate>
-              {information.dateInfo}
-            </NewsDate>
-          </StrongerNews>
-          <StrongerImage src={kachok} />
-        </Stronger>
-      </NewsInner>
-    </ContainerInfo>
+    <Container>
+      <InfoContainer>
+        {information_map.map(e =>
+          <InformationInner>
+            <InformationItem>
+              <InfoArtInfo>
+                <InfoMore>
+                  <Link to='/art' className='Info__more-link'>Информация</Link>
+                </InfoMore>
+                <InfoTitle>
+                  {information.nameArt}
+                </InfoTitle>
+                <InfoSubTitle>
+                  {information.shortInfo}
+                </InfoSubTitle>
+              </InfoArtInfo>
+              <InfoDate>
+                {information.dateInfo}
+              </InfoDate>
+            </InformationItem>
+            <InfoCachok src={kachok} />
+          </InformationInner>
+        )}
+      </InfoContainer>
+    </Container>
   );
 };
 
-const ContainerInfo = styled.div`
-  max-width: 1220px;
-  margin: 0 auto;
-  width: calc(100% - 32px);
-  padding: 0 17px ;
-  display: flex;
-
-  justify-content: space-between;
-
-`;
-
-
-
-const MainInfo = styled.div`
+const InfoContainer = styled.div`
 display: flex;
-flex-direction:column;
+flex-flow: row wrap;
+gap:40px;
+justify-content: center;
+padding:40px;
 `;
 
-const StrongerNews = styled.div`
-  background-color: #2D2D2D;
-  padding: 30px;
-  min-height:fit-content;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  
-`;
 
-const NewsInfo = styled.a`
-padding: 12px;
-border: 1px solid #25BA00;
-text-align: center;
-font-family: 'Gotham Pro Regular', sans-serif;
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 13px;
-letter-spacing: 0.05em;
-text-transform: uppercase;
-color: #FFFFFF;
-margin-bottom: 30px;
-width: fit-content;
-`;
-
-const NewsTitle = styled.div`
-font-family: 'Gotham Pro Regular', sans-serif;
-font-style: normal;
-font-weight: 700;
-font-size: 14px;
-line-height: 20px;
-letter-spacing: 0.05em;
-text-transform: uppercase;
-color: #FFFFFF;
-margin-bottom: 10px;
-`;
-
-const NewsSub = styled.div`
-font-family: 'Gotham Pro Regular', sans-serif;
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 20px;
-letter-spacing: 0.03em;
-color: #FFFFFF;
-padding: 2px 0 0 ;
-/* border-top: 1px solid #25BA00; */
-width: fit-content;
-`;
-
-const StrongerImage = styled.img`
-width:50%;
-`;
-
-const NewsDate = styled.div`
+const InfoDate = styled.div`
 font-family: 'Gotham Pro Regular', sans-serif;
 font-style: normal;
 font-weight: 400;
@@ -127,26 +58,61 @@ line-height: 11px;
 letter-spacing: 0.05em;
 text-transform: uppercase;
 color: #FFFFFF;
-  &:before{
-    border: 1px solid #25BA00;
+    &:before {
+    content: "";;
+    border-bottom: 1px solid #25BA00;
+    min-width: 50px;
+    position:absolute;
 
-  }
+    }
 `;
 
-const Stronger = styled.div`
+const InfoArtInfo = styled.div`
+`;
+
+const InfoSubTitle = styled.div`
+font-family: 'Gotham Pro Regular', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: 0.03em;
+color: #FFFFFF;
+margin-top: 10px;
+max-width:200px;
+`;
+
+const InfoTitle = styled.div`
+font-family: 'Gotham Pro Regular', sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 35px;
+letter-spacing: 0.05em;
+text-transform: uppercase;
+color: #FFFFFF;
+margin-top: 30px;
+max-width:200px;
+`;
+
+const InfoMore = styled.div`
+`;
+
+const InfoCachok = styled.img`
+
+`;
+
+const InformationItem = styled.div`
+background-color: #2D2D2D;
+padding:30px;
 display: flex;
-max-width:48%;
+flex-direction:column;
 justify-content: space-between;
-min-width:570px;
-min-height:400px;
-`;
 
-const NewsInner = styled.div`
+`;
+const InformationInner = styled.div`
 display: flex;
-padding: 20px 0 ;
-flex-wrap: wrap;
-gap: 48px;
-
 `;
+
 
 export default Information

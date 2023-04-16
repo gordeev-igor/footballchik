@@ -60,6 +60,7 @@ const options = {
 };
 
 const stat_map = ['Удары', 'Скорость', 'Реакция', 'Прыжок', 'Точность удара(%)']
+
 const Mystats = () => {
 
   return (

@@ -146,8 +146,11 @@ const AchievStats = styled.div`
 display: flex;
 flex-direction:column;
 gap:30px;
-padding:40px 0px;
+padding: 78px 0px;
+min-height:50vh;
+
 `;
+
 
 
 export default Achievements

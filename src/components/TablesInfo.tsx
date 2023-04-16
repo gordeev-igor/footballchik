@@ -118,7 +118,6 @@ align-items:center;
 flex-direction:column;
 justify-content:end;
 min-width:fit-content;
-/* border: solid 1px #25BA00; */
 `;
 
 
