@@ -43,7 +43,7 @@ const Information = () => {
 const InfoContainer = styled.div`
 display: flex;
 flex-flow: row wrap;
-gap:40px;
+gap:48px;
 justify-content: center;
 padding:40px;
 `;
@@ -59,11 +59,11 @@ letter-spacing: 0.05em;
 text-transform: uppercase;
 color: #FFFFFF;
     &:before {
-    content: "";;
+    content: "";
     border-bottom: 1px solid #25BA00;
     min-width: 50px;
-    position:absolute;
-
+    position: absolute;
+    margin-top:-30px;
     }
 `;
 
@@ -108,7 +108,6 @@ padding:30px;
 display: flex;
 flex-direction:column;
 justify-content: space-between;
-
 `;
 const InformationInner = styled.div`
 display: flex;
