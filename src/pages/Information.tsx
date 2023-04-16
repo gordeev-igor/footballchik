@@ -44,8 +44,7 @@ const InfoContainer = styled.div`
 display: flex;
 flex-flow: row wrap;
 gap:48px;
-justify-content: center;
-padding:40px;
+padding-top:40px;
 `;
 
 
@@ -109,6 +108,7 @@ display: flex;
 flex-direction:column;
 justify-content: space-between;
 `;
+
 const InformationInner = styled.div`
 display: flex;
 `;
