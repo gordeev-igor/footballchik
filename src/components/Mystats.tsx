@@ -59,7 +59,7 @@ const options = {
   vAxis: { minValue: 0, maxValue: 40 },
 };
 
-const stat_map = ['Удары', 'Скорость', 'Реакция', 'Прыжок']
+const stat_map = ['Удары', 'Скорость', 'Реакция', 'Прыжок', 'Точность удара(%)']
 const Mystats = () => {
 
   return (

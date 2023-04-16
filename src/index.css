@@ -283,3 +283,7 @@ select {
 .link__information{
   color: white;
 }
+
+.stats__title-show:hover{
+  color:#25BA00;
+}
