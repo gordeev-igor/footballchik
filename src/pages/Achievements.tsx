@@ -2,11 +2,17 @@ import styled from 'styled-components';
 import Container from '../components/Container';
 import { Link } from 'react-router-dom';
 import arrow from '../img/arrow.svg'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Events from '../components/Events';
 import Scores from '../components/Scores';
 import AboutAchievements from './AboutAchievements';
+import axios from 'axios';
+import { baseURL } from '../utils/constants';
 
+interface UserAchievementsType{
+  countTraining: string;
+  visitCamp: string
+}
 
 const Achievements = () => {
 
@@ -24,6 +30,17 @@ const Achievements = () => {
     setEvents(!events)
   }
 
+  const [achievments, setAchievments] = useState<UserAchievementsType>()
+  useEffect(() => {
+    axios({
+      method: 'get',
+      url: baseURL + "userAchievements",
+    })
+      .then(response => {
+        setAchievments(response.data)
+      });
+  }, [])
+
   return (
     <>
       {activeModal && <ModalAchievs onClick={showModal}>
@@ -37,7 +54,7 @@ const Achievements = () => {
                 Количество посещённых тренировок:
               </StatsTitleInfo>
               <StatsTitleCount>
-                12
+                {achievments?.countTraining}
               </StatsTitleCount>
             </StatsTitleUpper>
             <AboutAchievs onClick={showModal}>
@@ -49,7 +66,7 @@ const Achievements = () => {
               Посещение лагеря:
             </StatsTitleInfo>
             <StatsTitleCount>
-              3
+              {achievments?.visitCamp}
             </StatsTitleCount>
           </StatsTitle>
           <StatsTitleMore onClick={showEvents} defaultChecked={events}>
