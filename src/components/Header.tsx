@@ -6,15 +6,29 @@ import mail from '../img/mail.svg'
 import main from '../img/main.svg'
 import { Link, NavLink } from 'react-router-dom'
 import Container from './Container';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { baseURL } from '../utils/constants';
 
-
-const abonement = {
-  lastPay: '29.03.2022',
-  time: 'месяц',
-  type: 'базовый',
+interface UserAbonementType {
+  lastPay: string;
+  time: string;
+  type: string;
 }
 
 const Header = () => {
+  const [abonement, setAbonement] = useState<UserAbonementType>();
+  useEffect(() => {
+    axios({
+      method: 'get',
+      url: baseURL + "userAbonement",
+    })
+      .then(response => {
+        setAbonement(response.data)
+      });
+  }, [])
+
+
   return (
     <Container>
       <HeaderTopInner>
@@ -33,7 +47,7 @@ const Header = () => {
                 Крайняя оплата:
               </TitleTe>
               <SubText>
-                {abonement.lastPay}
+                {abonement?.lastPay}
               </SubText>
             </LastPay>
             <PayMonth>
@@ -41,7 +55,7 @@ const Header = () => {
                 Оплачено на:
               </TitleTe>
               <SubText>
-                {abonement.time}
+                {abonement?.time}
               </SubText>
             </PayMonth>
             <Abonem>
@@ -49,7 +63,7 @@ const Header = () => {
                 Абонемент:
               </TitleTe>
               <SubText>
-                {abonement.type}
+                {abonement?.type}
               </SubText>
             </Abonem>
           </PayInfo>

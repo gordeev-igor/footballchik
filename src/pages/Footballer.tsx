@@ -3,16 +3,19 @@ import makar from '../img/footballer1.jpg';
 import moreicon from '../img/more.svg'
 import Mystats from '../components/Mystats';
 import Average from '../components/Average';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Container from '../components/Container';
+import axios from 'axios';
+import { baseURL } from '../utils/constants';
 
 
- const footballer = {
-  name: 'Макар бондарев',
-  position: 'Нападающий',
-  age: '29.01.2005',
-  foot: 'Быстрая',
-  team: 'FC Спартак',
+interface FootballerType {
+  name: string;
+  position: string;
+  age: string;
+  foot: string;
+  team: string;
+
 }
 
 const Footballer = () => {
@@ -21,11 +24,25 @@ const Footballer = () => {
   const moreStats = () => {
     setMore(!more)
   };
-  
+
   const [show, setShow] = useState(false);
   const showStats = () => {
     setShow(!show)
   };
+
+
+
+  const [user, setUser] = useState<FootballerType>();
+  useEffect(() => {
+    axios({
+      method: 'get',
+      url: baseURL + "footballer",
+    })
+    .then(response => {
+      setUser(response.data)
+      console.log(response.data);
+    });
+  }, [])
 
 
 
@@ -34,14 +51,14 @@ const Footballer = () => {
       <Information>
         <Resume>
           <Name>
-            {footballer.name}
+            {user?.name}
           </Name>
           <Position>
             <Title>
               Позиция:
             </Title>
             <SubTitle>
-              {footballer.position}
+              {user?.position}
             </SubTitle>
           </Position>
           <Age>
@@ -49,7 +66,7 @@ const Footballer = () => {
               Возраст:
             </Title>
             <SubTitle>
-              {footballer.age}
+              {user?.age}
             </SubTitle>
           </Age>
           <Foot>
@@ -57,7 +74,7 @@ const Footballer = () => {
               Нога:
             </Title>
             <SubTitle>
-              {footballer.foot}
+              {user?.foot}
             </SubTitle>
           </Foot>
           <Team>
@@ -65,7 +82,7 @@ const Footballer = () => {
               Команда:
             </Title>
             <SubTitle>
-              {footballer.team}
+              {user?.team}
             </SubTitle>
           </Team>
         </Resume>
