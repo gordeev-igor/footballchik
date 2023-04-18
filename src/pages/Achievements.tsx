@@ -5,9 +5,15 @@ import arrow from '../img/arrow.svg'
 import { useState } from 'react';
 import Events from '../components/Events';
 import Scores from '../components/Scores';
+import AboutAchievements from './AboutAchievements';
+
 
 const Achievements = () => {
 
+  const [activeModal, setActiveModal] = useState(false)
+  const showModal = () => {
+    setActiveModal(!activeModal)
+  }
 
   const [scores, setScores] = useState(false)
   const showScores = () => {
@@ -19,47 +25,65 @@ const Achievements = () => {
   }
 
   return (
-    <Container>
-      <AchievStats>
-        <StatsTitle1>
-          <StatsTitleUpper>
+    <>
+      {activeModal && <ModalAchievs onClick={showModal}>
+        <AboutAchievements />
+      </ModalAchievs>}
+      <Container>
+        <AchievStats>
+          <StatsTitle1>
+            <StatsTitleUpper>
+              <StatsTitleInfo>
+                Количество посещённых тренировок:
+              </StatsTitleInfo>
+              <StatsTitleCount>
+                12
+              </StatsTitleCount>
+            </StatsTitleUpper>
+            <AboutAchievs onClick={showModal}>
+              Подробнее про “Достижения”
+            </AboutAchievs>
+          </StatsTitle1>
+          <StatsTitle>
             <StatsTitleInfo>
-              Количество посещённых тренировок:
+              Посещение лагеря:
             </StatsTitleInfo>
             <StatsTitleCount>
-              12
+              3
             </StatsTitleCount>
-          </StatsTitleUpper>
-          <AboutAchievs>
-            <Link to="/aboutAchievements"> Подробнее про “Достижения”</Link>
-          </AboutAchievs>
-        </StatsTitle1>
-        <StatsTitle>
-          <StatsTitleInfo>
-            Посещение лагеря:
-          </StatsTitleInfo>
-          <StatsTitleCount>
-            3
-          </StatsTitleCount>
-        </StatsTitle>
-        <StatsTitleMore onClick={showEvents} defaultChecked={events}>
-          <StatsTitleInfoLink defaultChecked={events}>
-            Мероприятия
-          </StatsTitleInfoLink>
-          <StatsTitleArrow src={arrow} defaultChecked={events} />
-        </StatsTitleMore>
-        {events && <Events />}
-        <StatsTitleMore onClick={showScores} defaultChecked={scores}>
-          <StatsTitleInfoLink defaultChecked={scores}>
-            Заработано баллов
-          </StatsTitleInfoLink>
-          <StatsTitleArrow src={arrow} defaultChecked={scores} />
-        </StatsTitleMore>
-        {scores && <Scores />}
-      </AchievStats>
-    </Container>
+          </StatsTitle>
+          <StatsTitleMore onClick={showEvents} defaultChecked={events}>
+            <StatsTitleInfoLink defaultChecked={events}>
+              Мероприятия
+            </StatsTitleInfoLink>
+            <StatsTitleArrow src={arrow} defaultChecked={events} />
+          </StatsTitleMore>
+          {events && <Events />}
+          <StatsTitleMore onClick={showScores} defaultChecked={scores}>
+            <StatsTitleInfoLink defaultChecked={scores}>
+              Заработано баллов
+            </StatsTitleInfoLink>
+            <StatsTitleArrow src={arrow} defaultChecked={scores} />
+          </StatsTitleMore>
+          {scores && <Scores />}
+        </AchievStats>
+      </Container>
+    </>
   )
 }
+
+
+
+
+const ModalAchievs = styled.div`
+position:fixed;
+background-color: rgba(0,0,0,0.4);
+height:100vh;
+width:100vw;
+display: flex;
+justify-content: center;
+align-items: center;
+`;
 
 
 const StatsTitleUpper = styled.div`
@@ -139,6 +163,7 @@ line-height: 30px;
 text-align: right;
 letter-spacing: 0.03em;
 color: #2D2D2D;
+cursor:pointer;
 `;
 
 

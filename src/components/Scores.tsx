@@ -4,32 +4,42 @@ import backPack from '../img/backpack.svg'
 import twovs from '../img/2vs2.svg'
 import threevs from '../img/3vs3.svg'
 
+const scores_map = [
+  {
+    img: allScore,
+    title:'Всего заработано баллов:',
+    count: '0',
+  },
+  {
+    img: backPack,
+    title:'Лагерь:',
+    count: '0',
+  },
+  {
+    img: twovs,
+    title:'2 против 2:',
+    count: '12',
+  },
+  {
+    img: threevs,
+    title:'3 против 3:',
+    count: '17',
+  },
+]
+
 
 const Scores = () => {
   return (
     <ScoresContainer>
       <ScoresInner>
         <ScoresItem>
+          {scores_map.map(e=>
           <ScoresParameter>
-            <ParamIcon src={allScore}/>
-            <ParamTitle>Всего заработано баллов:</ParamTitle>
-            <ParamIndex>0</ParamIndex>
+            <ParamIcon src={e.img}/>
+            <ParamTitle>{e.title}</ParamTitle>
+            <ParamIndex>{e.count}</ParamIndex>
           </ScoresParameter>
-          <ScoresParameter>
-            <ParamIcon src={backPack}/>
-            <ParamTitle>Лагерь:</ParamTitle>
-            <ParamIndex>0</ParamIndex>
-          </ScoresParameter>
-          <ScoresParameter>
-            <ParamIcon src={twovs}/>
-            <ParamTitle>2 против 2:</ParamTitle>
-            <ParamIndex>12</ParamIndex>
-          </ScoresParameter>
-          <ScoresParameter>
-            <ParamIcon src={threevs}/>
-            <ParamTitle>3 против 3:</ParamTitle>
-            <ParamIndex>17</ParamIndex>
-          </ScoresParameter>
+          )}
         </ScoresItem>
       </ScoresInner>
     </ScoresContainer>

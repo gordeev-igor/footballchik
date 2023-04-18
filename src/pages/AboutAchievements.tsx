@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 
 const AboutAchievements = () => {
   return (
-    <Container>
-      <AboutContainer>
+    <WrapperAbout >
+      <AboutContainer onClick={e => e.stopPropagation()}>
         <AboutContentItems>
           <AboutTitleCont>
             <AboutTitle>Достижения</AboutTitle>
@@ -112,11 +112,8 @@ const AboutAchievements = () => {
           </Gifts>
         </AboutBonus>
         <Trainer>Обо всех подробностях уточняйте у Вашего тренера.</Trainer>
-        <Link to='/achievements'>
-          <AboutBack>Вернуться на главную.</AboutBack>
-        </Link>
       </AboutContainer>
-    </Container>
+    </WrapperAbout>
   )
 }
 
@@ -312,8 +309,20 @@ padding:25px ;
 display: flex;
 flex-direction:column;
 gap:40px;
+width:fit-content;
+background-color: #ffffff;
+`;
+const WrapperAbout = styled.div`
+width:fit-content;
+height:fit-content;
+background-color: #fff;
+
+
+
 
 `;
+
+
 
 
 

@@ -1,6 +1,6 @@
 import './App.css'
 import styled from 'styled-components';
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import News from './pages/News'
 import Footballer from './pages/Footballer'
 import Login from './pages/Login';
@@ -9,23 +9,23 @@ import Information from './pages/Information';
 import ArtInfo from './pages/ArtInfo';
 import Timesheet from './pages/Timesheet';
 import Achievements from './pages/Achievements';
-import AboutAchievements from './pages/AboutAchievements';
+
 
 const App = () => {
   return (
     <Wrapper>
       <Routes>
-        <Route path='/' element={<Layout />}>
-          <Route index path="/footballer" element={<Footballer />}/>
+        <Route element={<Layout />}>
+          <Route index path="/footballer" element={<Footballer />} />
           <Route path="/news" element={<News />} />
           <Route path="/information" element={<Information />} />
           <Route path="/art" element={<ArtInfo />} />
           <Route path="/timesheet" element={<Timesheet />} />
           <Route path="/achievements" element={<Achievements />} />
+          <Route path='*' element={<Navigate to='/footballer' />} />
         </Route>
         <Route>
-          <Route path="/login" element={<Login/>} />
-          <Route path="/aboutAchievements" element={<AboutAchievements/>} />
+          <Route path="/login" element={<Login />} />
         </Route>
       </Routes>
     </Wrapper>
