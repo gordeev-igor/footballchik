@@ -15,10 +15,6 @@ const Mystats = () => {
   const [dateList, setDateList] = useState(false);
   const chooseYear = () => {
     setDateList(!dateList)
-    function asas () {
-    }
-    asas()
-    return
   };
 
 

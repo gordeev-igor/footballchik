@@ -1,5 +1,3 @@
-import react from 'react';
-import { Chart } from 'react-google-charts';
 import styled from 'styled-components';
 import Container from '../components/Container';
 import kachok from '../img/kachok.jpg'
@@ -22,10 +20,10 @@ const Information = () => {
                   <Link to='/art' className='Info__more-link'>Информация</Link>
                 </InfoMore>
                 <InfoTitle>
-                  {information.nameArt}
+                  <Link to='/art' className='info__title-link'> {information.nameArt}</Link>
                 </InfoTitle>
                 <InfoSubTitle>
-                  {information.shortInfo}
+                  <Link to='/art' className='info__subtitle-link'>{information.shortInfo}</Link>
                 </InfoSubTitle>
               </InfoArtInfo>
               <InfoDate>
@@ -46,7 +44,6 @@ flex-flow: row wrap;
 gap:48px;
 padding-top:40px;
 `;
-
 
 const InfoDate = styled.div`
 font-family: 'Gotham Pro Regular', sans-serif;
