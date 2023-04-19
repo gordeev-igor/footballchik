@@ -2,12 +2,33 @@ import styled from 'styled-components';
 import Container from '../components/Container';
 import kachok from '../img/kachok.jpg'
 import { Link } from 'react-router-dom';
-import { information } from './ArtInfo';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { baseURL } from '../utils/constants';
 
 
 const information_map = [1, 2, 3, 4]
 
+interface InformationArticleType {
+  nameArticle: string,
+  shortArticle: string,
+  dateArticle: string
+}
+
 const Information = () => {
+
+  const [article, setArticle] = useState<InformationArticleType>();
+  
+    
+  useEffect(() => {
+    axios({
+      method: 'get',
+      url: baseURL + "informationArticle",
+    })
+      .then(response => {
+        setArticle(response.data)
+      });
+  }, [])
 
   return (
     <Container>
@@ -20,14 +41,14 @@ const Information = () => {
                   <Link to='/art' className='Info__more-link'>Информация</Link>
                 </InfoMore>
                 <InfoTitle>
-                  <Link to='/art' className='info__title-link'> {information.nameArt}</Link>
+                  <Link to='/art' className='info__title-link'> {article?.nameArticle}</Link>
                 </InfoTitle>
                 <InfoSubTitle>
-                  <Link to='/art' className='info__subtitle-link'>{information.shortInfo}</Link>
+                  <Link to='/art' className='info__subtitle-link'>{article?.shortArticle}</Link>
                 </InfoSubTitle>
               </InfoArtInfo>
               <InfoDate>
-                {information.dateInfo}
+                {article?.dateArticle}
               </InfoDate>
             </InformationItem>
             <InfoCachok src={kachok} />

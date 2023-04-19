@@ -1,41 +1,71 @@
 import artimg from '../img/article-img.jpg'
 import styled from 'styled-components';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { baseURL } from '../utils/constants';
 
 
-export const information = {
-  nameArt: 'Тренировки на улице',
-  shortInfo: 'Данный способ поможет вам развить силу',
-  dateInfo: '15 окт. 2021',
+interface TextArticleType {
+  firstParagraph: string,
+  secondParagraph: string
 }
 
+interface TitleArticleType {
+  firstTitle: string,
+  secondTitle: string
+}
+
+interface TrainArticleType {
+  nameArticle: string,
+  shortArticle: string,
+  dateArticle: string,
+  titleArticle: TitleArticleType,
+  textArticle: TextArticleType
+}
+
+
 const ArtInfo = () => {
+
+  const [articleContent, setArticleContent] = useState<TrainArticleType>();
+  useEffect(() => {
+    axios({
+      method: 'get',
+      url: baseURL + "informationArticle",
+    })
+      .then(response => {
+        setArticleContent(response.data)
+      });
+  }, [])
+
 
   return (
     <ArtInner>
       <AtrTitile>
-        {information.nameArt}
+        {articleContent?.nameArticle}
       </AtrTitile>
       <ArtDate>
-        {information.dateInfo}
+        {articleContent?.dateArticle}
       </ArtDate>
       <ArtImg src={artimg} />
       <Content>
         <ContentTitle>
-          РАЗМИНКА
+          {articleContent?.titleArticle?.firstTitle}
         </ContentTitle>
         <ContentText>
-          Рекламная акция без оглядки на авторитеты спонтанно стабилизирует рекламный макет. Изменение глобальной стратегии детерминирует продвигаемый инвестиционный продукт, опираясь на опыт западных коллег. Фокусировка откровенна. Правда, специалисты отмечают, что изменение глобальной стратегии многопланово индуцирует институциональный бюджет на размещение, размещаясь во всех медиа. Медиавес спонтанно индуцирует пул лояльных изданий, размещаясь во всех медиа. Повторный контакт, согласно Ф.Котлеру, допускает анализ зарубежного опыта.
+          {articleContent?.textArticle?.firstParagraph}
         </ContentText>
         <ContentText>
-          Таргетирование переворачивает ролевой стиль менеджмента, отвоевывая свою долю рынка. Отсюда естественно следует, что маркетингово-ориентированное издание деятельно концентрирует сублимированный сегмент рынка. Создание приверженного покупателя, анализируя результаты рекламной кампании, охватывает ролевой продукт. Построение бренда, согласно Ф.Котлеру, индуцирует конвергентный потребительский рынок. Восприятие марки определяет фирменный рекламный клаттер.        </ContentText>
+          {articleContent?.textArticle?.secondParagraph}
+        </ContentText>
         <ContentTitle>
-          Ролевой медиамикс глазами современников
+          {articleContent?.titleArticle?.secondTitle}
         </ContentTitle>
         <ContentText>
-          Рекламная акция без оглядки на авторитеты спонтанно стабилизирует рекламный макет. Изменение глобальной стратегии детерминирует продвигаемый инвестиционный продукт, опираясь на опыт западных коллег. Фокусировка откровенна. Правда, специалисты отмечают, что изменение глобальной стратегии многопланово индуцирует институциональный бюджет на размещение, размещаясь во всех медиа. Медиавес спонтанно индуцирует пул лояльных изданий, размещаясь во всех медиа. Повторный контакт, согласно Ф.Котлеру, допускает анализ зарубежного опыта.
+          {articleContent?.textArticle?.firstParagraph}
         </ContentText>
         <ContentText>
-          Таргетирование переворачивает ролевой стиль менеджмента, отвоевывая свою долю рынка. Отсюда естественно следует, что маркетингово-ориентированное издание деятельно концентрирует сублимированный сегмент рынка. Создание приверженного покупателя, анализируя результаты рекламной кампании, охватывает ролевой продукт. Построение бренда, согласно Ф.Котлеру, индуцирует конвергентный потребительский рынок. Восприятие марки определяет фирменный рекламный клаттер.        </ContentText>
+          {articleContent?.textArticle?.firstParagraph}
+        </ContentText>
       </Content>
     </ArtInner>
 
