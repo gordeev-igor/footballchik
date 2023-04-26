@@ -53,8 +53,6 @@ const Mystats = () => {
 const DateList = styled.div`
 `;
 
-
-
 const DateValue = styled.div`
 padding: 20px;
 border:solid 1px #25BA00;
@@ -67,6 +65,7 @@ line-height: 20px;
 letter-spacing: 0.03em;
 color: #2D2D2D;
 min-width:358px;
+
 cursor:pointer;
   &:hover{
     background-color: rgba(37, 186, 0, 0.1);
