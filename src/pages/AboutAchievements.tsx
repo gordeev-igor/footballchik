@@ -189,6 +189,7 @@ font-size: 18px;
 line-height: 17px;
 color: #2D2D2D;
 `;
+
 const BonusText = styled.div`
 font-family: 'Gotham Pro Regular', sans-serif;
 font-style: normal;
@@ -213,7 +214,6 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 min-width: 350px;
-
 `;
 
 const AboutContentInner = styled.div`

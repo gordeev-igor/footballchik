@@ -27,6 +27,7 @@ interface TrainArticleType {
 const ArtInfo = () => {
 
   const [articleContent, setArticleContent] = useState<TrainArticleType>();
+  const [isArticleLoading, setIsArticleLoading] = useState(false);
   useEffect(() => {
     axios({
       method: 'get',
@@ -34,6 +35,7 @@ const ArtInfo = () => {
     })
       .then(response => {
         setArticleContent(response.data)
+        setIsArticleLoading(true)
       });
   }, [])
 
@@ -82,6 +84,7 @@ letter-spacing: 0.03em;
 color: #1D2130;
 margin-bottom:20px;
 width:800px;
+text-align:justify;
 
 `;
 

@@ -1,14 +1,5 @@
 import styled from 'styled-components';
 
-
-const container = () => {
-  return (
-    <Container>
-
-    </Container>
-  )
-}
-
 const Container = styled.div`
   max-width: 1220px;
   margin: 0 auto;
@@ -17,7 +8,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
 `;
 
 

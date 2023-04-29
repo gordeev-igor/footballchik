@@ -40,14 +40,13 @@ const Footballer = () => {
     })
     .then(response => {
       setUser(response.data)
-      console.log(response.data);
     });
   }, [])
 
 
 
   return (
-    <Container>
+    <Container key = {1}>
       <Information>
         <Resume>
           <Name>
@@ -91,12 +90,12 @@ const Footballer = () => {
         </Avatar>
       </Information>
       <Statistic defaultChecked={more} onClick={moreStats} >
-        <MyStats defaultChecked={more}>
+        <MyStatistic defaultChecked={more}>
           Моя статистика
-        </MyStats>
+        </MyStatistic>
         <MoreIcon src={moreicon} defaultChecked={more} />
       </Statistic>
-      {more && <Mystats />}
+      {more && <Mystats key={123} />}
       <Result defaultChecked={show} onClick={showStats} >
         <AverageResult defaultChecked={show}>
           Средний результат
@@ -140,7 +139,7 @@ const MoreIcon = styled.img`
   transform: ${props => props.defaultChecked ? "rotate(90deg)" : "rotate(0deg)"} ;
 `;
 
-const MyStats = styled.div`
+const MyStatistic = styled.div`
 font-family: 'Gotham Pro Regular', sans-serif;
 font-style: normal;
 font-weight: 400;

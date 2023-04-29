@@ -11,13 +11,11 @@ export const dateFootballer = [
 ]
 
 
-const Mystats = () => {
+const MyStats = () => {
   const [dateList, setDateList] = useState(false);
   const chooseYear = () => {
     setDateList(!dateList)
   };
-
-
 
   return (
     <ContainerResult>
@@ -70,11 +68,9 @@ cursor:pointer;
   &:hover{
     background-color: rgba(37, 186, 0, 0.1);
   }
-
 `;
 
 const DateIcon = styled.img`
-
 `;
 
 
@@ -97,8 +93,6 @@ align-items: center;
     background-color: rgba(37, 186, 0, 0.1);
     cursor: pointer;
   }
-
-
 `;
 
 const ChooseDate = styled.div`
@@ -107,7 +101,6 @@ justify-content: center;
 flex-direction:column;
 align-items: center;
 `;
-
 
 const ResultTitle = styled.div`
 text-align:center;
@@ -120,8 +113,6 @@ text-align: center;
 letter-spacing: 0.03em;
 color: #2D2D2D;
 width:550px;
-
-
 `;
 
 const ResulInner = styled.div`
@@ -147,4 +138,4 @@ const ContainerResult = styled.div`
 
 
 
-export default Mystats
+export default MyStats

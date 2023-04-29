@@ -9,8 +9,6 @@ import { pow } from "./Mystats";
 
 const TablesInfo = () => {
 
-
-
   return (
     <>
       <TableBorder></TableBorder>
@@ -55,7 +53,6 @@ const TablesInfo = () => {
     </>
   )
 }
-
 
 const TableBorder = styled.div`
 border-bottom:solid 1px #25BA00;

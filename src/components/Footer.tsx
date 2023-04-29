@@ -56,7 +56,6 @@ letter-spacing: 0.05em;
 color: #FFFFFF;
 `;
 
-
 const FooterSocial = styled.div`
 `;
 
@@ -80,7 +79,6 @@ display: flex;
 gap: 90px;
 `;
 
-
 const FooterInner = styled.div`
 padding: 30px 135px;
 height: fit-content;
@@ -89,6 +87,5 @@ display: flex;
 justify-content: space-between;
 margin-top: 20px;
 `;
-
 
 export default Footer

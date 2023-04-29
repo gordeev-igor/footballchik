@@ -28,21 +28,21 @@ const Schedule = () => {
   return (
     <Container>
       <ScheduleContainer>
-        {scheduleDay.map(e =>
+        {scheduleDay.map(day =>
           <WrapSchedule>
             <ScheduleTitle>
-              {e}
+              {day}
             </ScheduleTitle>
             <ScheduleWeeks>
-              {scheduleWeek.map(e =>
+              {scheduleWeek.map(week =>
                 <ScheduleWeek>
                   <ScheduleDayTitle>
-                    {e}
+                    {week}
                   </ScheduleDayTitle>
-                  {scheduleTime.map(e =>
+                  {scheduleTime.map(time =>
                     <ScheduleDay>
                       <DayMark src={mark} />
-                      <DayTime>{e}</DayTime>
+                      <DayTime>{time}</DayTime>
                       <DayAdress>Зиповская 24/7</DayAdress>
                     </ScheduleDay>
                   )}

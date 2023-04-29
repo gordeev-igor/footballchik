@@ -10,8 +10,8 @@ import axios from 'axios';
 import { baseURL } from '../utils/constants';
 
 interface UserAchievementsType{
-  countTraining: string;
-  visitCamp: string
+  countTraining: number;
+  visitCamp: number
 }
 
 const Achievements = () => {

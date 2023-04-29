@@ -2,20 +2,17 @@ import { Chart } from 'react-google-charts';
 import styled from 'styled-components';
 
 
-function getRandomInt() {
-  return Math.round(Math.random() * (40 - 1)) + 1;
-};
-function getRandomDate() {
-  return Math.round(Math.random() * (30 - 1)) + 1;
+function getRandomInt(min: number , max: number) {
+  return Math.round(Math.random() * (max - min)) + 1;
 };
 
 export const pow: number[] = [];
 const date: number[] = [];
 for (let i = 0; i < 4; i++) {
-  const power = getRandomInt();
+  const power = getRandomInt(1,40);
   pow.push(power)
-  const nov = getRandomDate()
-  date.push(nov)
+  const month = getRandomInt(1,30)
+  date.push(month)
 };
 pow.sort((a, b) => a - b);
 date.sort((a, b) => a - b);
@@ -59,20 +56,20 @@ const options = {
   vAxis: { minValue: 0, maxValue: 40 },
 };
 
-const stat_map = ['Удары', 'Скорость', 'Реакция', 'Прыжок', 'Точность удара(%)']
+const statMap = ['Удары', 'Скорость', 'Реакция', 'Прыжок', 'Точность удара(%)']
 
 const Mystats = () => {
 
   return (
-    <ContainerStat>
-      <WrapStat>
-        {stat_map.map(e =>
+    <ContainerStat >
+      <WrapStat  >
+        {statMap.map(userStat =>
           <Parameter >
-            <StatTitle>
-              {e}
-            </StatTitle>
-            <Graph>
-              <Chart
+            <StatTitle >
+              {userStat}
+            </StatTitle >
+            <Graph >
+              <Chart 
                 chartType="AreaChart"
                 data={data}
                 options={options}
@@ -97,40 +94,39 @@ const ContainerStat = styled.div`
   flex-direction: column;
   justify-content: space-between;
   border-bottom: solid 1px #25BA00;
+  min-height:1000px;
 `;
 
 
 const WrapStat = styled.div`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px 0;
-        flex-wrap: wrap;
-        gap: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  gap: 48px;
+  `;
 
-        `;
+ const Parameter = styled.div`
+ `;
 
-const Parameter = styled.div`
+ const Graph = styled.div`
+  font-family: 'Gotham Pro';
+ `;
 
-        `;
-const Graph = styled.div`
-        font-family: 'Gotham Pro';
-        `;
-
-const StatTitle = styled.div`
-        font-family: 'Gotham Pro Regular', sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 19px;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        color: #2D2D2D;
-        padding-bottom:5px;
-        border-bottom: 1px solid #25BA00;
-        width: fit-content;
-        margin-left: 85px;
-
-        `;
+ const StatTitle = styled.div`
+  font-family: 'Gotham Pro Regular', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #2D2D2D;
+  padding-bottom:5px;
+  border-bottom: 1px solid #25BA00;
+  width: fit-content;
+  margin-left: 85px;
+ `;
 
 export default Mystats

@@ -4,7 +4,7 @@ import backPack from '../img/backpack.svg'
 import twovs from '../img/2vs2.svg'
 import threevs from '../img/3vs3.svg'
 
-const scores_map = [
+const scoresMap = [
   {
     img: allScore,
     title:'Всего заработано баллов:',
@@ -33,11 +33,11 @@ const Scores = () => {
     <ScoresContainer>
       <ScoresInner>
         <ScoresItem>
-          {scores_map.map(e=>
+          {scoresMap.map(score=>
           <ScoresParameter>
-            <ParamIcon src={e.img}/>
-            <ParamTitle>{e.title}</ParamTitle>
-            <ParamIndex>{e.count}</ParamIndex>
+            <ParamIcon src={score.img}/>
+            <ParamTitle>{score.title}</ParamTitle>
+            <ParamIndex>{score.count}</ParamIndex>
           </ScoresParameter>
           )}
         </ScoresItem>

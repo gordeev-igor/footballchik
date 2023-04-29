@@ -14,15 +14,15 @@ const Login = () => {
             <InfoTitle>
               Почта
             </InfoTitle>
-            <UserMail type="text" placeholder='Введите почту' />
+            <UserMail required type="email" placeholder='Введите почту' />
           </Mail>
           <Pass>
             <InfoTitle>
               Пароль
             </InfoTitle>
-            <UserPass type="password" placeholder='Введите пароль' />
+            <UserPass required type="password" placeholder='Введите пароль' />
           </Pass>
-          <SignInBtn type='button'>
+          <SignInBtn type='submit'>
             Войти
           </SignInBtn>
         </FormContent>

@@ -20,15 +20,15 @@ const Schools = () => {
   return (
     <Container>
       <SchoolsContainer>
-        {schools.map(e =>
+        {schools.map(school =>
           <SchoolsItem>
             <SchoolImg src={schoolsImg} />
             <SchoolInfo>
-              <InfoTitle> {e} </InfoTitle>
+              <InfoTitle> {school} </InfoTitle>
               <InfoSubtitle>12/6</InfoSubtitle>
-              {days.map(e =>
+              {days.map(day =>
                 <InfoDays>
-                  <InfoDay>{e}</InfoDay>
+                  <InfoDay>{day}</InfoDay>
                     <InfoTime>
                       <TimeMark src={mark} />
                       <Time>18:00</Time>

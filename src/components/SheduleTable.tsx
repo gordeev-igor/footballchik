@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Container from "./Container";
-import mark from '../img/green-mark.svg'
-import InfoDays from "./Schools";
+
 
 const SheduleTable = () => {
   return (
